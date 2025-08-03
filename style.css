@@ -32,7 +32,7 @@ body {
   height: 320px;
   perspective: 800px;
   transition: opacity 0.5s ease;
-  z-index: 3;
+  z-index: 1;
 }
 
 .envelope-base {
@@ -46,7 +46,6 @@ body {
   z-index: 1;
 }
 
-/* Inverted V seam */
 .envelope-v {
   position: absolute;
   top: 0;
@@ -56,10 +55,9 @@ body {
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
   border-top: 160px solid #e58bb0;
-  z-index: 2;
+  z-index: 1;
 }
 
-/* Flap */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -71,11 +69,10 @@ body {
   border-top: 160px solid #f497af;
   transform-origin: top center;
   transform: rotate(0deg);
-  z-index: 4;
+  z-index: 2;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
-/* Flap open with bounce */
 .flap-open {
   animation: flapOpenBounce 0.8s forwards;
 }
@@ -86,7 +83,6 @@ body {
   100% { transform: rotateX(180deg); }
 }
 
-/* Flap closing with small bounce */
 .flap-close {
   animation: flapCloseBounce 0.8s forwards;
 }
@@ -103,10 +99,9 @@ body {
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
+  z-index: 3;
 }
 
-/* Letter */
 .paper {
   position: absolute;
   bottom: 0;
@@ -127,13 +122,13 @@ body {
   pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   overflow: hidden;
+  z-index: 5;
 }
 
-/* Slide out with bounce */
+/* Slide out (letter comes out) */
 .paper.show {
   animation: letterSlideOut 1s forwards;
   pointer-events: auto;
-  z-index: 5;
 }
 @keyframes letterSlideOut {
   0%   { transform: translateX(-50%) translateY(100%); opacity: 0; }
@@ -142,9 +137,10 @@ body {
   100% { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
-/* Slide back into envelope smoothly */
+/* Slide in (letter goes back in) */
 .paper.hide {
   animation: letterSlideIn 1s forwards;
+  pointer-events: none;
 }
 @keyframes letterSlideIn {
   0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
@@ -159,7 +155,6 @@ body {
   text-align: center;
 }
 
-/* Buttons */
 .buttons {
   margin-top: 40px;
   display: flex;
