@@ -1,7 +1,7 @@
 const flap = document.getElementById('flap');
 const paper = document.getElementById('paper');
 const buttons = document.getElementById('buttons');
-const noButton = document.getElementById('noButton');
+const noBtn = document.getElementById('noBtn');
 
 // Sound elements
 const flapOpenSound = document.getElementById('flapOpenSound');
@@ -51,21 +51,10 @@ function returnToEnvelope() {
   hidePaper();
 }
 
-// Make "No" button jump to a random position
-function moveNoButton() {
-  const container = document.querySelector('.container');
-  const btn = noButton;
-
-  const containerRect = container.getBoundingClientRect();
-  const btnRect = btn.getBoundingClientRect();
-
-  const maxX = container.clientWidth - btn.offsetWidth;
-  const maxY = container.clientHeight - btn.offsetHeight;
-
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
-
-  btn.style.position = 'absolute';
-  btn.style.left = `${randomX}px`;
-  btn.style.top = `${randomY + 200}px`; // pushes it a bit down for fun
-}
+// Optional: Make "No" button move
+noBtn.addEventListener('mouseover', () => {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 100 - 50;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  noBtn.style.transition = 'transform 0.3s ease';
+});
