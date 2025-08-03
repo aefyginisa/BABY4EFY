@@ -18,7 +18,6 @@ function showPaper() {
   setTimeout(() => {
     paper.classList.remove('hide');
     paper.classList.add('show');
-
     slideOutSound.currentTime = 0;
     slideOutSound.play();
 
@@ -34,6 +33,36 @@ function hidePaper() {
   slideInSound.currentTime = 0;
   slideInSound.play();
 
+  setTimeout(() => {
+    flap.classList.remove('flap-open');
+    flap.classList.add('flap-close');
+
+    flapCloseSound.currentTime = 0;
+    flapCloseSound.play();
+
+    buttons.style.opacity = '1';
+    buttons.style.pointerEvents = 'auto';
+  }, 1000);
+}
+
+function returnToEnvelope() {
+  hidePaper();
+}
+
+function moveNoButton() {
+  const container = document.querySelector('.container');
+  const btn = noButton;
+
+  const maxX = container.clientWidth - btn.offsetWidth;
+  const maxY = container.clientHeight - btn.offsetHeight;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  btn.style.position = 'absolute';
+  btn.style.left = `${randomX}px`;
+  btn.style.top = `${randomY + 200}px`;
+}
   setTimeout(() => {
     flap.classList.remove('flap-open');
     flap.classList.add('flap-close');
