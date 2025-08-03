@@ -1,7 +1,6 @@
 const flap = document.getElementById('flap');
 const paper = document.getElementById('paper');
 const buttons = document.getElementById('buttons');
-const noButton = document.getElementById('noButton');
 
 const flapOpenSound = document.getElementById('flapOpenSound');
 const slideOutSound = document.getElementById('slideOutSound');
@@ -42,10 +41,4 @@ function hidePaper() {
 
 function returnToEnvelope() {
   hidePaper();
-}
-
-function moveNoButton() {
-  const x = Math.random() * 300 - 150;
-  const y = Math.random() * 100 - 50;
-  noButton.style.transform = `translate(${x}px, ${y}px)`;
 }
