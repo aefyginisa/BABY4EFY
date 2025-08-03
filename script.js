@@ -42,3 +42,18 @@ function hidePaper() {
 function returnToEnvelope() {
   hidePaper();
 }
+
+function avoidClick() {
+  const noButton = document.getElementById("noButton");
+  const parent = noButton.parentElement;
+
+  const maxX = parent.clientWidth - noButton.offsetWidth;
+  const maxY = parent.clientHeight - noButton.offsetHeight;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+
+  noButton.style.position = "absolute";
+  noButton.style.left = `${randomX}px`;
+  noButton.style.top = `${randomY}px`;
+}
