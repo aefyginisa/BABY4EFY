@@ -177,10 +177,6 @@ button:hover {
   background-color: #f497af;
 }
 
-#noButton {
-  position: absolute;
-}
-
 .back-button {
   margin-top: 20px;
   background-color: #b86b8c;
