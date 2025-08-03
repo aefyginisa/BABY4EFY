@@ -32,7 +32,7 @@ body {
   height: 320px;
   perspective: 800px;
   transition: opacity 0.5s ease;
-  z-index: 1;
+  z-index: 3;
 }
 
 .envelope-base {
@@ -55,7 +55,7 @@ body {
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
   border-top: 160px solid #e58bb0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .envelope-flap {
@@ -69,7 +69,7 @@ body {
   border-top: 160px solid #f497af;
   transform-origin: top center;
   transform: rotate(0deg);
-  z-index: 2;
+  z-index: 4;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
@@ -99,7 +99,7 @@ body {
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 5;
 }
 
 .paper {
@@ -122,10 +122,9 @@ body {
   pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   overflow: hidden;
-  z-index: 5;
+  z-index: 6;
 }
 
-/* Slide out (letter comes out) */
 .paper.show {
   animation: letterSlideOut 1s forwards;
   pointer-events: auto;
@@ -137,14 +136,14 @@ body {
   100% { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
-/* Slide in (letter goes back in) */
 .paper.hide {
-  animation: letterSlideIn 1s forwards;
+  animation: letterSlideIn 0.8s forwards;
   pointer-events: none;
 }
 @keyframes letterSlideIn {
   0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
-  60%  { transform: translateX(-50%) translateY(80%); opacity: 1; }
+  30%  { transform: translateX(-50%) translateY(10px); }
+  70%  { transform: translateX(-50%) translateY(100%); opacity: 1; }
   100% { transform: translateX(-50%) translateY(100%); opacity: 0; }
 }
 
@@ -160,6 +159,7 @@ body {
   display: flex;
   gap: 20px;
   transition: opacity 0.5s ease;
+  position: relative;
 }
 
 button {
@@ -175,6 +175,10 @@ button {
 
 button:hover {
   background-color: #f497af;
+}
+
+#noButton {
+  position: absolute;
 }
 
 .back-button {
