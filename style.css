@@ -122,12 +122,12 @@ body {
   pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   overflow: hidden;
-  z-index: 6;
 }
 
 .paper.show {
   animation: letterSlideOut 1s forwards;
   pointer-events: auto;
+  z-index: 5;
 }
 @keyframes letterSlideOut {
   0%   { transform: translateX(-50%) translateY(100%); opacity: 0; }
@@ -137,14 +137,14 @@ body {
 }
 
 .paper.hide {
-  animation: letterSlideIn 0.8s forwards;
+  animation: letterSlideBack 0.8s forwards;
   pointer-events: none;
 }
-@keyframes letterSlideIn {
+@keyframes letterSlideBack {
   0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
   30%  { transform: translateX(-50%) translateY(10px); }
   70%  { transform: translateX(-50%) translateY(100%); opacity: 1; }
-  100% { transform: translateX(-50%) translateY(100%); opacity: 0; }
+  100% { transform: translateX(-50%) translateY(100%); opacity: 1; }
 }
 
 .letter-content {
@@ -159,7 +159,6 @@ body {
   display: flex;
   gap: 20px;
   transition: opacity 0.5s ease;
-  position: relative;
 }
 
 button {
