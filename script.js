@@ -18,6 +18,7 @@ function showPaper() {
   setTimeout(() => {
     paper.classList.remove('hide');
     paper.classList.add('show');
+
     slideOutSound.currentTime = 0;
     slideOutSound.play();
 
@@ -49,47 +50,16 @@ function returnToEnvelope() {
   hidePaper();
 }
 
-function moveNoButton() {
+// No button moves away when clicked
+noButton.addEventListener('mouseenter', () => {
   const container = document.querySelector('.container');
-  const btn = noButton;
-
-  const maxX = container.clientWidth - btn.offsetWidth;
-  const maxY = container.clientHeight - btn.offsetHeight;
+  const maxX = container.clientWidth - noButton.offsetWidth;
+  const maxY = container.clientHeight - noButton.offsetHeight;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
-  btn.style.position = 'absolute';
-  btn.style.left = `${randomX}px`;
-  btn.style.top = `${randomY + 200}px`;
-}
-  setTimeout(() => {
-    flap.classList.remove('flap-open');
-    flap.classList.add('flap-close');
-
-    flapCloseSound.currentTime = 0;
-    flapCloseSound.play();
-
-    buttons.style.opacity = '1';
-    buttons.style.pointerEvents = 'auto';
-  }, 1100);
-}
-
-function returnToEnvelope() {
-  hidePaper();
-}
-
-function moveNoButton() {
-  const container = document.querySelector('.container');
-  const btn = noButton;
-
-  const maxX = container.clientWidth - btn.offsetWidth;
-  const maxY = container.clientHeight - btn.offsetHeight;
-
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
-
-  btn.style.position = 'absolute';
-  btn.style.left = `${randomX}px`;
-  btn.style.top = `${randomY + 200}px`;
-}
+  noButton.style.position = 'absolute';
+  noButton.style.left = `${randomX}px`;
+  noButton.style.top = `${randomY + 150}px`;
+});
