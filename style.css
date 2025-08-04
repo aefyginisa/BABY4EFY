@@ -127,7 +127,7 @@ body {
   pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   z-index: 6;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .paper.show {
