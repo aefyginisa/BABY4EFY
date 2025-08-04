@@ -8,6 +8,9 @@ const slideOutSound = document.getElementById('slideOutSound');
 const slideInSound = document.getElementById('slideInSound');
 const flapCloseSound = document.getElementById('flapCloseSound');
 
+const imagePage = document.getElementById('imagePage');
+const textPage = document.getElementById('textPage');
+
 function showPaper() {
   flap.classList.remove('flap-close');
   flap.classList.add('flap-open');
@@ -18,6 +21,9 @@ function showPaper() {
   setTimeout(() => {
     paper.classList.remove('hide');
     paper.classList.add('show');
+
+    imagePage.classList.add('active');
+    textPage.classList.remove('active');
 
     slideOutSound.currentTime = 0;
     slideOutSound.play();
@@ -43,7 +49,6 @@ function hidePaper() {
 
     buttons.style.opacity = '1';
     buttons.style.pointerEvents = 'auto';
-    showPage(1); // Reset to page 1
   }, 1100);
 }
 
@@ -51,17 +56,15 @@ function returnToEnvelope() {
   hidePaper();
 }
 
-function showPage(pageNumber) {
-  const page1 = document.getElementById('page1');
-  const page2 = document.getElementById('page2');
+// Switch pages
+function goToTextPage() {
+  imagePage.classList.remove('active');
+  textPage.classList.add('active');
+}
 
-  if (pageNumber === 1) {
-    page1.classList.remove('hidden');
-    page2.classList.add('hidden');
-  } else {
-    page1.classList.add('hidden');
-    page2.classList.remove('hidden');
-  }
+function goToImagePage() {
+  textPage.classList.remove('active');
+  imagePage.classList.add('active');
 }
 
 function moveNoButton() {
