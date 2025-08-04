@@ -42,6 +42,7 @@ body {
   background: linear-gradient(180deg, #f8a6c9 0%, #f497af 100%);
   border-radius: 0 0 10px 10px;
   bottom: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -101,15 +102,54 @@ body {
   z-index: 5;
 }
 
+/* Paper / Letter */
 .paper {
-  background-color: #fdf1f5;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
   width: 90%;
   height: 340px;
+  background: repeating-linear-gradient(
+    white,
+    white 28px,
+    gray 29px,
+    white 30px
+  );
+  border: 2px solid #eeb4d4;
+  border-radius: 12px;
   padding: 30px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   overflow: hidden;
+  z-index: 6;
+}
+
+.paper.show {
+  animation: letterSlideOut 1s forwards;
+  pointer-events: auto;
+}
+@keyframes letterSlideOut {
+  0%   { transform: translateX(-50%) translateY(100%); opacity: 0; }
+  60%  { transform: translateX(-50%) translateY(-10px); opacity: 1; }
+  80%  { transform: translateX(-50%) translateY(-5px); }
+  100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+.paper.hide {
+  animation: letterSlideIn 0.8s forwards;
+}
+@keyframes letterSlideIn {
+  0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
+  30%  { transform: translateX(-50%) translateY(10px); }
+  70%  { transform: translateX(-50%) translateY(100%); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(100%); opacity: 0; }
 }
 
 .letter-content {
@@ -117,23 +157,18 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .letter-image {
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   border-radius: 8px;
 }
 
-.poem-text {
-  color: #444;
-  font-size: 18px;
-  line-height: 1.8;
-  text-align: justify;
-  padding: 10px;
-  width: 100%;
-}
-
+/* Buttons under letter */
 .button-row {
   display: flex;
   justify-content: space-between;
@@ -141,15 +176,11 @@ body {
   margin-top: 20px;
 }
 
-.hide {
-  display: none;
-}
-
-.nav-buttons {
-  margin-top: 25px;
+.buttons {
+  margin-top: 40px;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  gap: 20px;
+  transition: opacity 0.5s ease;
 }
 
 button {
@@ -165,4 +196,26 @@ button {
 
 button:hover {
   background-color: #f497af;
+}
+
+.back-button {
+  background-color: #b86b8c;
+}
+
+/* Poem Page */
+.poem-page {
+  text-align: justify;
+}
+
+.poem-text {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Hide and show helpers */
+.hide {
+  display: none;
 }
