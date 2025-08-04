@@ -18,38 +18,40 @@
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- Letter Page 1 (Image) -->
+        <!-- Letter - Page 1 (Image) -->
         <div class="paper" id="paper">
-          <div class="letter-content">
+          <div class="letter-content image-page">
             <img src="shawn-ellis-note.png" alt="Cute Letter" class="letter-image">
           </div>
           <div class="letter-buttons">
             <button class="nav-button" onclick="returnToEnvelope()">Return to Envelope</button>
-            <button class="nav-button" onclick="showTextPage()">Next</button>
+            <button class="nav-button right" onclick="goToTextPage()">Next</button>
           </div>
         </div>
 
-        <!-- Letter Page 2 (Text) -->
-        <div class="paper" id="textPage" style="display: none;">
-          <div class="letter-content">
-            <p>
-              Your smile’s a sunrise, warm and bright,<br>
-              your laugh’s a song in soft daylight.<br>
-              Your eyes, they hold a gentle gleam,<br>
-              like hopeful stars within a dream.<br><br>
-              The way you hold my hand with care,<br>
-              and brush the strands of my loose hair,<br>
-              it feels like home, it feels so right—<br>
-              so safe in your warmth, so soft in your light.
-            </p>
+        <!-- Letter - Page 2 (Text) -->
+        <div class="paper second-page" id="textPage">
+          <div class="letter-text">
+            <div class="scrollable-content">
+              <p>
+                Your smile’s a sunrise, warm and bright,<br>
+                your laugh’s a song in soft daylight.<br>
+                Your eyes, they hold a gentle gleam,<br>
+                like hopeful stars within a dream.<br><br>
+                The way you hold my hand with care,<br>
+                and brush the strands of my loose hair,<br>
+                it feels like home, it feels so right—<br>
+                so safe in your warmth, so soft in your light.
+              </p>
+            </div>
           </div>
           <div class="letter-buttons">
-            <button class="nav-button" onclick="showImagePage()">Back</button>
+            <button class="nav-button" onclick="goToImagePage()">Back</button>
           </div>
         </div>
       </div>
 
-      <!-- Initial Buttons -->
+      <!-- Buttons -->
       <div class="buttons" id="buttons">
         <button onclick="showPaper()">Yes</button>
         <button id="noButton" onclick="moveNoButton()">No</button>
