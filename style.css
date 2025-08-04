@@ -188,6 +188,12 @@ button:hover {
 }
 
 .back-button {
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: #b86b8c;
+}
+
+/* Optional: give the letter a bit more bottom padding */
+.paper {
+  /* ...existing styles... */
+  padding-bottom: 40px;
 }
