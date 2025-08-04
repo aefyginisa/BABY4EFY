@@ -18,64 +18,66 @@
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- Page 1 (Image) -->
+        <!-- Letter - Page 1 (Image) -->
         <div class="paper" id="paper">
           <div class="letter-content image-page">
             <img src="shawn-ellis-note.png" alt="Cute Letter" class="letter-image">
           </div>
-          <div class="letter-buttons lower-position">
+          <div class="letter-buttons spaced lower-position">
             <button class="nav-button" onclick="returnToEnvelope()">Return to Envelope</button>
             <button class="nav-button right" onclick="goToTextPage()">Next</button>
           </div>
         </div>
 
-        <!-- Page 2 (Poem) -->
-        <div class="paper second-page" id="textPage">
-          <div class="letter-content">
-            <p>
-              Your smile’s a sunrise, warm and bright,<br>
-              your laugh’s a song in soft daylight.<br>
-              Your eyes, they hold a gentle gleam,<br>
-              like hopeful stars within a dream.<br><br>
-              The way you hold my hand with care,<br>
-              and brush the strands of my loose hair,<br>
-              it feels like home, it feels so right—<br>
-              so safe in your warmth, so soft in your light.
-            </p>
+        <!-- Letter - Page 2 (Poem) -->
+        <div class="paper second-page hide" id="textPage">
+          <div class="letter-text">
+            <div class="scrollable-content">
+              <p>
+                Your smile’s a sunrise, warm and bright,<br>
+                your laugh’s a song in soft daylight.<br>
+                Your eyes, they hold a gentle gleam,<br>
+                like hopeful stars within a dream.<br><br>
+                The way you hold my hand with care,<br>
+                and brush the strands of my loose hair,<br>
+                it feels like home, it feels so right—<br>
+                so safe in your warmth, so soft in your light.
+              </p>
+            </div>
           </div>
-          <div class="letter-buttons lower-position">
+          <div class="letter-buttons spaced lower-position">
             <button class="nav-button" onclick="goToImagePage()">Back</button>
-            <button class="nav-button right" onclick="goToThirdPage()">Next</button>
+            <button class="nav-button right" onclick="goToLongLetterPage()">Next</button>
           </div>
         </div>
 
-        <!-- Page 3 (Long Letter) -->
-        <div class="paper third-page" id="longLetterPage">
-          <div class="letter-content scrollable-content">
-            <p>
-To my dearest darling,<br><br>
+        <!-- Letter - Page 3 (Long Letter) -->
+        <div class="paper third-page hide" id="longLetterPage">
+          <div class="letter-text">
+            <div class="scrollable-content">
+              <p>
+                To my dearest darling,<br><br>
+                I don’t even know how to start this without smiling because just thinking about you already fills me up in ways I can’t explain. You’ve become such a special part of my life that even the simplest moments with you feel extraordinary. Sometimes, it’s the way you laugh at the tiniest things, or how you listen so intently even when I’m talking about random stuff. Sometimes, it’s how you always make me feel like I matter—like I’m seen and heard even when I can’t find the right words to explain how I feel.<br><br>
 
-I don’t even know how to start this without smiling because just thinking about you already fills me up in ways I can’t explain. You’ve become such a special part of my life that even the simplest moments with you feel extraordinary. Sometimes, it’s the way you laugh at the tiniest things, or how you listen so intently even when I’m talking about random stuff. Sometimes, it’s how you always make me feel like I matter—like I’m seen and heard even when I can’t find the right words to explain how I feel.<br><br>
+                I cherish every bit of you. Every little thing you do feels so important to me, even the things you might not even notice about yourself. Like how you stay up late just to check if I got home safe, or how you can sense when I’m not okay even when I say I’m fine. You make me feel safe, like I can breathe easier knowing you’re there, even if we’re not in the same place. You’ve become my calm in the middle of chaos, my safe place to land when everything feels heavy.<br><br>
 
-I cherish every bit of you. Every little thing you do feels so important to me, even the things you might not even notice about yourself. Like how you stay up late just to check if I got home safe, or how you can sense when I’m not okay even when I say I’m fine. You make me feel safe, like I can breathe easier knowing you’re there, even if we’re not in the same place. You’ve become my calm in the middle of chaos, my safe place to land when everything feels heavy.<br><br>
+                And honestly, baby, I don’t think I’ve ever felt this kind of love before. It’s warm and real and a little overwhelming sometimes, but in the best way possible. You’ve shown me patience when I’m at my worst and kindness when I can’t seem to be kind to myself. Even when I mess up or when I struggle to express my feelings properly, you still choose to stay—you still choose me. That’s something I’ll never take for granted, because people like you… they don’t just come around every day.<br><br>
 
-And honestly, baby, I don’t think I’ve ever felt this kind of love before. It’s warm and real and a little overwhelming sometimes, but in the best way possible. You’ve shown me patience when I’m at my worst and kindness when I can’t seem to be kind to myself. Even when I mess up or when I struggle to express my feelings properly, you still choose to stay—you still choose me. That’s something I’ll never take for granted, because people like you… they don’t just come around every day.<br><br>
+                Sometimes I wonder what I did to deserve someone like you. You make me feel so blessed, so loved, so incredibly lucky. And because of that, I want to keep choosing you too. I want to love you back the way you deserve—to hold your hand through good days and bad, to stand beside you when things get hard, and to remind you that you’ll never have to go through life alone as long as I’m here.<br><br>
 
-Sometimes I wonder what I did to deserve someone like you. You make me feel so blessed, so loved, so incredibly lucky. And because of that, I want to keep choosing you too. I want to love you back the way you deserve—to hold your hand through good days and bad, to stand beside you when things get hard, and to remind you that you’ll never have to go through life alone as long as I’m here.<br><br>
+                So before I overthink and rewrite this a hundred times (kasi I already did), I just want to say this—I love you. I really, really do. Thank you for being patient with me, for caring for me, for making me laugh, and for just being you. And if it’s okay with you, I’d like to keep calling you mine. Actually—scratch that—I’d like to be yours officially.<br><br>
 
-So before I overthink and rewrite this a hundred times (kasi I already did), I just want to say this—I love you. I really, really do. Thank you for being patient with me, for caring for me, for making me laugh, and for just being you. And if it’s okay with you, I’d like to keep calling you mine. Actually—scratch that—I’d like to be yours officially.<br><br>
-
-- Your girlfriend !
-            </p>
+                - Your girlfriend !
+              </p>
+            </div>
           </div>
-          <div class="letter-buttons lower-position">
+          <div class="letter-buttons spaced lower-position">
             <button class="nav-button" onclick="goToTextPage()">Back</button>
           </div>
         </div>
-
       </div>
 
-      <!-- Intro Buttons -->
+      <!-- Buttons -->
       <div class="buttons" id="buttons">
         <button onclick="showPaper()">Yes</button>
         <button id="noButton" onclick="moveNoButton()">No</button>
