@@ -166,16 +166,23 @@ body {
 }
 
 .letter-image {
-  max-width: 500px; /* slightly bigger than before */
+  max-width: 700px; /* slightly bigger than before */
   max-height: 100%;
   object-fit: contain;
   border-radius: 8px;
 }
 
-.letter-buttons.lower-buttons {
+.letter-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.letter-buttons.lower-position {
   margin-top: auto;
-  margin-bottom: 10px;
   padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .buttons {
