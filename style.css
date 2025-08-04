@@ -109,8 +109,13 @@ body {
   transform: translateX(-50%) translateY(100%);
   width: 90%;
   height: 320px;
-  background: #fffafc;
-  border: 4px dashed #f5b7c8;
+  background: repeating-linear-gradient(
+    white,
+    white 28px,
+    #f3f3f3 29px,
+    white 30px
+  );
+  border: 2px solid #eeb4d4;
   border-radius: 12px;
   padding: 30px;
   box-sizing: border-box;
@@ -137,18 +142,27 @@ body {
 }
 
 .paper.hide {
-  animation: letterSlideIn 1s forwards;
+  animation: letterSlideIn 0.8s forwards;
 }
 @keyframes letterSlideIn {
   0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
+  30%  { transform: translateX(-50%) translateY(10px); }
+  70%  { transform: translateX(-50%) translateY(100%); opacity: 1; }
   100% { transform: translateX(-50%) translateY(100%); opacity: 0; }
 }
 
 .letter-content {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.letter-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .buttons {
@@ -156,7 +170,6 @@ body {
   display: flex;
   gap: 20px;
   transition: opacity 0.5s ease;
-  position: relative;
 }
 
 button {
