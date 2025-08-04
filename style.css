@@ -7,7 +7,6 @@ body {
   align-items: center;
   height: 100vh;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .title {
@@ -110,29 +109,26 @@ body {
   transform: translateX(-50%) translateY(100%);
   width: 90%;
   height: 320px;
-  background: repeating-linear-gradient(
-    white,
-    white 28px,
-    #ccc 29px,
-    white 30px
-  );
+  background: white;
   border: 2px solid #eeb4d4;
   border-radius: 12px;
-  padding: 30px 30px 50px;
+  padding: 30px;
   box-sizing: border-box;
-  display: flex;
+  display: none;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   opacity: 0;
   pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  z-index: 6;
   overflow: hidden;
+  z-index: 6;
 }
 
 .paper.show {
   animation: letterSlideOut 1s forwards;
+  display: flex;
   pointer-events: auto;
+  opacity: 1;
 }
 @keyframes letterSlideOut {
   0%   { transform: translateX(-50%) translateY(100%); opacity: 0; }
@@ -153,16 +149,15 @@ body {
 
 .letter-content {
   flex: 1;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
-  font-size: 16px;
+}
+
+.letter-content p {
   text-align: justify;
-  padding: 10px;
-  white-space: pre-wrap;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .letter-image {
@@ -172,14 +167,13 @@ body {
   border-radius: 8px;
 }
 
-.buttons {
-  margin-top: 40px;
+.letter-buttons {
   display: flex;
-  gap: 20px;
-  transition: opacity 0.5s ease;
+  justify-content: space-between;
+  margin-top: 20px; /* Push buttons slightly lower */
 }
 
-button {
+.nav-button {
   background-color: #f7b2c4;
   border: none;
   color: #fff;
@@ -190,12 +184,17 @@ button {
   transition: background 0.3s ease;
 }
 
-button:hover {
+.nav-button:hover {
   background-color: #f497af;
 }
 
-.back-button {
-  margin-top: 15px;
-  background-color: #b86b8c;
-  align-self: flex-end;
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  transition: opacity 0.5s ease;
+}
+
+button:hover {
+  background-color: #f497af;
 }
