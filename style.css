@@ -166,10 +166,16 @@ body {
 }
 
 .letter-image {
-  max-width: 480px;
+  max-width: 500px; /* slightly bigger than before */
   max-height: 100%;
   object-fit: contain;
   border-radius: 8px;
+}
+
+.letter-buttons.lower-buttons {
+  margin-top: auto;
+  margin-bottom: 10px;
+  padding-top: 20px;
 }
 
 .letter-buttons {
