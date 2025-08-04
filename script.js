@@ -31,8 +31,6 @@ function showPaper() {
 function hidePaper() {
   paper.classList.remove('show');
   paper.classList.add('hide');
-  textPage.classList.remove('show');
-  textPage.classList.add('hide');
 
   slideInSound.currentTime = 0;
   slideInSound.play();
@@ -51,26 +49,18 @@ function hidePaper() {
 
 function returnToEnvelope() {
   hidePaper();
+  textPage.style.display = 'none';
+  paper.style.display = 'flex';
 }
 
-function goToTextPage() {
-  paper.classList.remove('show');
-  paper.classList.add('hide');
-
-  setTimeout(() => {
-    textPage.classList.remove('hide');
-    textPage.classList.add('show');
-  }, 300);
+function showTextPage() {
+  paper.style.display = 'none';
+  textPage.style.display = 'flex';
 }
 
-function goToImagePage() {
-  textPage.classList.remove('show');
-  textPage.classList.add('hide');
-
-  setTimeout(() => {
-    paper.classList.remove('hide');
-    paper.classList.add('show');
-  }, 300);
+function showImagePage() {
+  textPage.style.display = 'none';
+  paper.style.display = 'flex';
 }
 
 function moveNoButton() {
