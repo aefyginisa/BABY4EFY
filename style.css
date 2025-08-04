@@ -7,6 +7,7 @@ body {
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .title {
@@ -109,26 +110,29 @@ body {
   transform: translateX(-50%) translateY(100%);
   width: 90%;
   height: 320px;
-  background: white;
+  background: repeating-linear-gradient(
+    white,
+    white 28px,
+    #ccc 29px,
+    white 30px
+  );
   border: 2px solid #eeb4d4;
   border-radius: 12px;
-  padding: 30px;
+  padding: 30px 30px 50px;
   box-sizing: border-box;
-  display: none;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  overflow: hidden;
   z-index: 6;
+  overflow: hidden;
 }
 
 .paper.show {
   animation: letterSlideOut 1s forwards;
-  display: flex;
   pointer-events: auto;
-  opacity: 1;
 }
 @keyframes letterSlideOut {
   0%   { transform: translateX(-50%) translateY(100%); opacity: 0; }
@@ -149,15 +153,16 @@ body {
 
 .letter-content {
   flex: 1;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.letter-content p {
-  text-align: justify;
+  overflow-y: auto;
   font-size: 16px;
-  line-height: 1.6;
+  text-align: justify;
+  padding: 10px;
+  white-space: pre-wrap;
+  line-height: 28px;
 }
 
 .letter-image {
@@ -167,13 +172,14 @@ body {
   border-radius: 8px;
 }
 
-.letter-buttons {
+.buttons {
+  margin-top: 40px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px; /* Push buttons slightly lower */
+  gap: 20px;
+  transition: opacity 0.5s ease;
 }
 
-.nav-button {
+button {
   background-color: #f7b2c4;
   border: none;
   color: #fff;
@@ -184,17 +190,12 @@ body {
   transition: background 0.3s ease;
 }
 
-.nav-button:hover {
-  background-color: #f497af;
-}
-
-.buttons {
-  margin-top: 40px;
-  display: flex;
-  gap: 20px;
-  transition: opacity 0.5s ease;
-}
-
 button:hover {
   background-color: #f497af;
+}
+
+.back-button {
+  margin-top: 15px;
+  background-color: #b86b8c;
+  align-self: flex-end;
 }
