@@ -30,12 +30,10 @@ function showPaper() {
 }
 
 function hidePaper() {
-  paper.classList.remove('show');
-  paper.classList.add('hide');
-  textPage.classList.remove('show');
-  textPage.classList.add('hide');
-  longLetterPage.classList.remove('show');
-  longLetterPage.classList.add('hide');
+  [paper, textPage, longLetterPage].forEach(p => {
+    p.classList.remove('show');
+    p.classList.add('hide');
+  });
 
   slideInSound.currentTime = 0;
   slideInSound.play();
@@ -59,8 +57,10 @@ function returnToEnvelope() {
 function moveNoButton() {
   const container = document.querySelector('.container');
   const btn = noButton;
+
   const maxX = container.clientWidth - btn.offsetWidth;
   const maxY = container.clientHeight - btn.offsetHeight;
+
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
@@ -70,10 +70,8 @@ function moveNoButton() {
 }
 
 function goToTextPage() {
-  paper.classList.remove('show');
-  paper.classList.add('hide');
-  longLetterPage.classList.remove('show');
-  longLetterPage.classList.add('hide');
+  [paper, longLetterPage].forEach(p => p.classList.remove('show'));
+  [paper, longLetterPage].forEach(p => p.classList.add('hide'));
 
   setTimeout(() => {
     textPage.classList.remove('hide');
@@ -82,8 +80,8 @@ function goToTextPage() {
 }
 
 function goToImagePage() {
-  textPage.classList.remove('show');
-  textPage.classList.add('hide');
+  [textPage, longLetterPage].forEach(p => p.classList.remove('show'));
+  [textPage, longLetterPage].forEach(p => p.classList.add('hide'));
 
   setTimeout(() => {
     paper.classList.remove('hide');
