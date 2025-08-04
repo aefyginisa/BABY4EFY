@@ -30,10 +30,14 @@ function showPaper() {
 }
 
 function hidePaper() {
-  [paper, textPage, longLetterPage].forEach(p => {
-    p.classList.remove('show');
-    p.classList.add('hide');
-  });
+  paper.classList.remove('show');
+  paper.classList.add('hide');
+
+  textPage.classList.remove('show');
+  textPage.classList.add('hide');
+
+  longLetterPage.classList.remove('show');
+  longLetterPage.classList.add('hide');
 
   slideInSound.currentTime = 0;
   slideInSound.play();
@@ -70,8 +74,8 @@ function moveNoButton() {
 }
 
 function goToTextPage() {
-  [paper, longLetterPage].forEach(p => p.classList.remove('show'));
-  [paper, longLetterPage].forEach(p => p.classList.add('hide'));
+  paper.classList.remove('show');
+  paper.classList.add('hide');
 
   setTimeout(() => {
     textPage.classList.remove('hide');
@@ -80,8 +84,8 @@ function goToTextPage() {
 }
 
 function goToImagePage() {
-  [textPage, longLetterPage].forEach(p => p.classList.remove('show'));
-  [textPage, longLetterPage].forEach(p => p.classList.add('hide'));
+  textPage.classList.remove('show');
+  textPage.classList.add('hide');
 
   setTimeout(() => {
     paper.classList.remove('hide');
@@ -96,5 +100,15 @@ function goToLongLetterPage() {
   setTimeout(() => {
     longLetterPage.classList.remove('hide');
     longLetterPage.classList.add('show');
+  }, 400);
+}
+
+function goToSecondPage() {
+  longLetterPage.classList.remove('show');
+  longLetterPage.classList.add('hide');
+
+  setTimeout(() => {
+    textPage.classList.remove('hide');
+    textPage.classList.add('show');
   }, 400);
 }
