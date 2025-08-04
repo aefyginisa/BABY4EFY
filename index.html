@@ -20,29 +20,31 @@
 
         <!-- Letter inside envelope -->
         <div class="paper" id="paper">
-          <!-- Page 1: Image Letter -->
-          <div class="letter-page" id="page1">
-            <img src="shawn-ellis-note.png" alt="Letter Image" class="letter-image" />
-            <div class="page-controls">
-              <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
-              <button class="next-button" onclick="showPage(2)">Next</button>
+          <!-- First Page with Image -->
+          <div class="letter-page image-page active" id="imagePage">
+            <div class="grid-style">
+              <img src="shawn-ellis-note.png" alt="Love Letter Image" />
+            </div>
+            <div class="button-row">
+              <button class="back-button left" onclick="returnToEnvelope()">Return to Envelope</button>
+              <button class="back-button right" onclick="goToTextPage()">Next</button>
             </div>
           </div>
 
-          <!-- Page 2: Text Letter -->
-          <div class="letter-page hidden" id="page2">
+          <!-- Second Page with Text -->
+          <div class="letter-page text-page" id="textPage">
             <div class="letter-text">
-              Your smile’s a sunrise, warm and bright,<br>
-              your laugh’s a song in soft daylight.<br>
-              Your eyes, they hold a gentle gleam,<br>
-              like hopeful stars within a dream.<br><br>
-              The way you hold my hand with care,<br>
-              and brush the strands of my loose hair,<br>
-              it feels like home, it feels so right—<br>
-              so safe in your warmth, so soft in your light.
+              <p>Your smile’s a sunrise, warm and bright,</p>
+              <p>your laugh’s a song in soft daylight.</p>
+              <p>Your eyes, they hold a gentle gleam,</p>
+              <p>like hopeful stars within a dream.</p>
+              <p>The way you hold my hand with care,</p>
+              <p>and brush the strands of my loose hair,</p>
+              <p>it feels like home, it feels so right—</p>
+              <p>so safe in your warmth, so soft in your light.</p>
             </div>
-            <div class="page-controls">
-              <button class="back-button" onclick="showPage(1)">Back</button>
+            <div class="button-row">
+              <button class="back-button left" onclick="goToImagePage()">Back</button>
             </div>
           </div>
         </div>
