@@ -130,6 +130,10 @@ body {
   overflow: hidden;
 }
 
+.image-page {
+  height: 360px; /* adjust as needed for even larger space */
+}
+
 .paper.show {
   animation: letterSlideOut 1s forwards;
   pointer-events: auto;
