@@ -166,7 +166,8 @@ body {
 }
 
 .letter-image {
-  max-width: 100%; /* slightly bigger than before */
+  width: 95%;
+  height: auto;
   max-height: 100%;
   object-fit: contain;
   border-radius: 8px;
