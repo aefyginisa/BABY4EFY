@@ -18,12 +18,30 @@
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- Letter -->
+        <!-- Letter inside envelope -->
         <div class="paper" id="paper">
-          <div class="letter-content">
-            <img src="shawn-ellis-note.png" alt="Cute Letter" class="letter-image">
+          <div class="letter-page" id="page1">
+            <img src="your-image.jpg" alt="Letter Image" class="letter-image" />
+            <div class="page-controls">
+              <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
+              <button class="next-button" onclick="showPage(2)">Next</button>
+            </div>
           </div>
-          <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
+          <div class="letter-page hidden" id="page2">
+            <div class="letter-text">
+              Your smile’s a sunrise, warm and bright,<br>
+              your laugh’s a song in soft daylight.<br>
+              Your eyes, they hold a gentle gleam,<br>
+              like hopeful stars within a dream.<br><br>
+              The way you hold my hand with care,<br>
+              and brush the strands of my loose hair,<br>
+              it feels like home, it feels so right—<br>
+              so safe in your warmth, so soft in your light.
+            </div>
+            <div class="page-controls">
+              <button class="back-button" onclick="showPage(1)">Back</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -35,7 +53,7 @@
     </div>
   </div>
 
-  <!-- Sounds -->
+  <!-- Sound effects -->
   <audio id="flapOpenSound" src="flap-open.mp3"></audio>
   <audio id="slideOutSound" src="slide-out.mp3"></audio>
   <audio id="slideInSound" src="slide-in.mp3"></audio>
