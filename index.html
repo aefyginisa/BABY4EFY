@@ -18,33 +18,31 @@
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- Letter Pages -->
+        <!-- Letter -->
         <div class="paper" id="paper">
           <!-- Page 1 (Image) -->
-          <div class="page page-image active" id="pageImage">
-            <img src="letter-image.jpg" alt="Letter" class="letter-image">
-            <div class="nav-buttons">
+          <div class="letter-content image-page" id="page1">
+            <img src="shawn-ellis-note.png" alt="Cute Letter" class="letter-image">
+            <div class="button-row">
               <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
-              <button class="next-button" onclick="showTextPage()">Next</button>
+              <button onclick="showNextPage()">Next</button>
             </div>
           </div>
 
-          <!-- Page 2 (Text) -->
-          <div class="page page-text" id="pageText">
-            <div class="letter-content">
-              <p>
-                Your smile’s a sunrise, warm and bright,<br>
-                your laugh’s a song in soft daylight.<br>
-                Your eyes, they hold a gentle gleam,<br>
-                like hopeful stars within a dream.<br><br>
-                The way you hold my hand with care,<br>
-                and brush the strands of my loose hair,<br>
-                it feels like home, it feels so right—<br>
-                so safe in your warmth, so soft in your light.
-              </p>
+          <!-- Page 2 (Poem) -->
+          <div class="letter-content poem-page hide" id="page2">
+            <div class="poem-text">
+              <p>Your smile’s a sunrise, warm and bright,<br>
+              your laugh’s a song in soft daylight.<br>
+              Your eyes, they hold a gentle gleam,<br>
+              like hopeful stars within a dream.<br><br>
+              The way you hold my hand with care,<br>
+              and brush the strands of my loose hair,<br>
+              it feels like home, it feels so right—<br>
+              so safe in your warmth, so soft in your light.</p>
             </div>
-            <div class="nav-buttons">
-              <button class="back-button" onclick="showImagePage()">Back</button>
+            <div class="button-row">
+              <button onclick="showPrevPage()">Back</button>
             </div>
           </div>
         </div>
