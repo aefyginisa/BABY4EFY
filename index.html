@@ -18,38 +18,38 @@
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- First Page (Image Letter) -->
+        <!-- Letter Page 1 (Image) -->
         <div class="paper" id="paper">
           <div class="letter-content">
             <img src="shawn-ellis-note.png" alt="Cute Letter" class="letter-image">
           </div>
           <div class="letter-buttons">
             <button class="nav-button" onclick="returnToEnvelope()">Return to Envelope</button>
-            <button class="nav-button right" onclick="goToTextPage()">Next</button>
+            <button class="nav-button" onclick="showTextPage()">Next</button>
           </div>
         </div>
 
-        <!-- Second Page (Text Letter) -->
-        <div class="paper" id="textPage">
+        <!-- Letter Page 2 (Text) -->
+        <div class="paper" id="textPage" style="display: none;">
           <div class="letter-content">
-            <div class="poem-text">
+            <p>
               Your smile’s a sunrise, warm and bright,<br>
               your laugh’s a song in soft daylight.<br>
               Your eyes, they hold a gentle gleam,<br>
-              like hopeful stars within a dream.<br>
+              like hopeful stars within a dream.<br><br>
               The way you hold my hand with care,<br>
               and brush the strands of my loose hair,<br>
               it feels like home, it feels so right—<br>
               so safe in your warmth, so soft in your light.
-            </div>
+            </p>
           </div>
           <div class="letter-buttons">
-            <button class="nav-button" onclick="goToImagePage()">Back</button>
+            <button class="nav-button" onclick="showImagePage()">Back</button>
           </div>
         </div>
       </div>
 
-      <!-- Buttons -->
+      <!-- Initial Buttons -->
       <div class="buttons" id="buttons">
         <button onclick="showPaper()">Yes</button>
         <button id="noButton" onclick="moveNoButton()">No</button>
