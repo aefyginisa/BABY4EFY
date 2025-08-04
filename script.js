@@ -43,23 +43,24 @@ function hidePaper() {
 
     buttons.style.opacity = '1';
     buttons.style.pointerEvents = 'auto';
-  }, 1000);
+  }, 800);
 }
 
 function returnToEnvelope() {
   hidePaper();
 }
 
-// No button moves away when clicked
-noButton.addEventListener('mouseenter', () => {
+function moveNoButton() {
   const container = document.querySelector('.container');
-  const maxX = container.clientWidth - noButton.offsetWidth;
-  const maxY = container.clientHeight - noButton.offsetHeight;
+  const btn = noButton;
+
+  const maxX = container.clientWidth - btn.offsetWidth;
+  const maxY = container.clientHeight - btn.offsetHeight;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
-  noButton.style.position = 'absolute';
-  noButton.style.left = `${randomX}px`;
-  noButton.style.top = `${randomY + 150}px`;
-});
+  btn.style.position = 'absolute';
+  btn.style.left = `${randomX}px`;
+  btn.style.top = `${randomY + 200}px`;
+}
