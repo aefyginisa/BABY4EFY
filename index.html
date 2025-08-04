@@ -18,31 +18,33 @@
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- Letter inside envelope -->
+        <!-- Letter Pages -->
         <div class="paper" id="paper">
-          <!-- Page 1: Image -->
-          <div class="letter-page image-page" id="page1">
-            <img src="shawn-ellis-note.png" alt="Letter" class="letter-image" />
-            <div class="button-row">
+          <!-- Page 1 (Image) -->
+          <div class="page page-image active" id="pageImage">
+            <img src="letter-image.jpg" alt="Letter" class="letter-image">
+            <div class="nav-buttons">
               <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
-              <button class="next-button" onclick="nextPage()">Next</button>
+              <button class="next-button" onclick="showTextPage()">Next</button>
             </div>
           </div>
 
-          <!-- Page 2: Poem -->
-          <div class="letter-page text-page hide" id="page2">
+          <!-- Page 2 (Text) -->
+          <div class="page page-text" id="pageText">
             <div class="letter-content">
-              <p>Your smile’s a sunrise, warm and bright,</p>
-              <p>your laugh’s a song in soft daylight.</p>
-              <p>Your eyes, they hold a gentle gleam,</p>
-              <p>like hopeful stars within a dream.</p>
-              <p>The way you hold my hand with care,</p>
-              <p>and brush the strands of my loose hair,</p>
-              <p>it feels like home, it feels so right—</p>
-              <p>so safe in your warmth, so soft in your light.</p>
+              <p>
+                Your smile’s a sunrise, warm and bright,<br>
+                your laugh’s a song in soft daylight.<br>
+                Your eyes, they hold a gentle gleam,<br>
+                like hopeful stars within a dream.<br><br>
+                The way you hold my hand with care,<br>
+                and brush the strands of my loose hair,<br>
+                it feels like home, it feels so right—<br>
+                so safe in your warmth, so soft in your light.
+              </p>
             </div>
-            <div class="button-row">
-              <button class="back-button" onclick="prevPage()">Back</button>
+            <div class="nav-buttons">
+              <button class="back-button" onclick="showImagePage()">Back</button>
             </div>
           </div>
         </div>
@@ -56,7 +58,7 @@
     </div>
   </div>
 
-  <!-- Sound effects -->
+  <!-- Sounds -->
   <audio id="flapOpenSound" src="flap-open.mp3"></audio>
   <audio id="slideOutSound" src="slide-out.mp3"></audio>
   <audio id="slideInSound" src="slide-in.mp3"></audio>
