@@ -11,25 +11,26 @@
     <h1 class="title">Hey! You got a <u>secret message</u>. Want to <span class="highlight">open</span> it?</h1>
 
     <div class="container">
+      <!-- Envelope -->
       <div class="envelope" id="envelope">
         <div class="envelope-flap" id="flap"></div>
         <div class="envelope-v"></div>
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- Letter -->
+        <!-- Letter inside envelope -->
         <div class="paper" id="paper">
-          <!-- Page 1 (Image) -->
-          <div class="letter-page image-page show" id="imagePage">
-            <img src="shawn-ellis-note.png" alt="Letter Image" class="letter-image" />
-            <div class="image-buttons">
-              <button class="back-button left" onclick="returnToEnvelope()">Return to Envelope</button>
-              <button class="back-button right" onclick="showTextPage()">Next</button>
+          <!-- Page 1: Image -->
+          <div class="letter-page image-page" id="page1">
+            <img src="shawn-ellis-note.png" alt="Letter" class="letter-image" />
+            <div class="button-row">
+              <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
+              <button class="next-button" onclick="nextPage()">Next</button>
             </div>
           </div>
 
-          <!-- Page 2 (Text) -->
-          <div class="letter-page text-page" id="textPage">
+          <!-- Page 2: Poem -->
+          <div class="letter-page text-page hide" id="page2">
             <div class="letter-content">
               <p>Your smile’s a sunrise, warm and bright,</p>
               <p>your laugh’s a song in soft daylight.</p>
@@ -40,7 +41,9 @@
               <p>it feels like home, it feels so right—</p>
               <p>so safe in your warmth, so soft in your light.</p>
             </div>
-            <button class="back-button left" onclick="showImagePage()">Back</button>
+            <div class="button-row">
+              <button class="back-button" onclick="prevPage()">Back</button>
+            </div>
           </div>
         </div>
       </div>
@@ -53,7 +56,7 @@
     </div>
   </div>
 
-  <!-- Sounds -->
+  <!-- Sound effects -->
   <audio id="flapOpenSound" src="flap-open.mp3"></audio>
   <audio id="slideOutSound" src="slide-out.mp3"></audio>
   <audio id="slideInSound" src="slide-in.mp3"></audio>
