@@ -43,11 +43,25 @@ function hidePaper() {
 
     buttons.style.opacity = '1';
     buttons.style.pointerEvents = 'auto';
-  }, 800);
+    showPage(1); // Reset to page 1
+  }, 1100);
 }
 
 function returnToEnvelope() {
   hidePaper();
+}
+
+function showPage(pageNumber) {
+  const page1 = document.getElementById('page1');
+  const page2 = document.getElementById('page2');
+
+  if (pageNumber === 1) {
+    page1.classList.remove('hidden');
+    page2.classList.add('hidden');
+  } else {
+    page1.classList.add('hidden');
+    page2.classList.remove('hidden');
+  }
 }
 
 function moveNoButton() {
@@ -63,17 +77,4 @@ function moveNoButton() {
   btn.style.position = 'absolute';
   btn.style.left = `${randomX}px`;
   btn.style.top = `${randomY + 200}px`;
-}
-
-function showPage(pageNumber) {
-  const page1 = document.getElementById('page1');
-  const page2 = document.getElementById('page2');
-
-  if (pageNumber === 1) {
-    page1.classList.remove('hidden');
-    page2.classList.add('hidden');
-  } else {
-    page1.classList.add('hidden');
-    page2.classList.remove('hidden');
-  }
 }
