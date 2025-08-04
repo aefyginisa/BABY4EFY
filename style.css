@@ -68,8 +68,8 @@ body {
   border-right: 250px solid transparent;
   border-top: 160px solid #f497af;
   transform-origin: top center;
-  transform: rotate(0deg);
   z-index: 4;
+  transform: rotate(0deg);
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
@@ -102,6 +102,7 @@ body {
   z-index: 5;
 }
 
+/* Letter wrapper */
 .paper {
   position: absolute;
   bottom: 0;
@@ -109,99 +110,75 @@ body {
   transform: translateX(-50%) translateY(100%);
   width: 90%;
   height: 320px;
-  background: #fffafc;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fffafc,
+    #fffafc 24px,
+    #ccc 25px
+  );
   border: 4px dashed #f5b7c8;
   border-radius: 12px;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 6;
 }
 
+/* Show and hide transitions */
 .paper.show {
   animation: letterSlideOut 1s forwards;
   pointer-events: auto;
-  z-index: 6;
 }
-@keyframes letterSlideOut {
-  0%   { transform: translateX(-50%) translateY(100%); opacity: 0; }
-  60%  { transform: translateX(-50%) translateY(-10px); opacity: 1; }
-  80%  { transform: translateX(-50%) translateY(-5px); }
-  100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-}
-
 .paper.hide {
   animation: letterSlideIn 0.8s forwards;
 }
+@keyframes letterSlideOut {
+  0% { transform: translateX(-50%) translateY(100%); opacity: 0; }
+  100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
 @keyframes letterSlideIn {
-  0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
-  30%  { transform: translateX(-50%) translateY(10px); }
-  70%  { transform: translateX(-50%) translateY(100%); opacity: 1; }
+  0% { transform: translateX(-50%) translateY(0); opacity: 1; }
   100% { transform: translateX(-50%) translateY(100%); opacity: 0; }
 }
 
+/* Image Page */
 .letter-page {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.letter-page.hidden {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.letter-page.show {
+  display: flex;
+}
+.letter-image {
+  max-height: 240px;
+  max-width: 100%;
 }
 
-.letter-image {
-  max-width: 100%;
-  max-height: 220px;
-  object-fit: contain;
+/* Text Page */
+.text-page .letter-content {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
   margin-top: 10px;
 }
 
-.letter-text {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-  text-align: center;
-  padding: 20px;
-}
-
-.page-controls {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.back-button,
-.next-button {
-  background-color: #b86b8c;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.back-button:hover,
-.next-button:hover {
-  background-color: #a05676;
-}
-
+/* Buttons */
 .buttons {
   margin-top: 40px;
   display: flex;
   gap: 20px;
   transition: opacity 0.5s ease;
 }
-
 button {
   background-color: #f7b2c4;
   border: none;
@@ -212,58 +189,20 @@ button {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 button:hover {
   background-color: #f497af;
 }
-
-/* Grid-style image layout to match uploaded image */
-.grid-style {
-  display: grid;
-  place-items: center;
-  height: 100%;
-  width: 100%;
+.back-button {
+  margin-top: 8px;
 }
-
-.grid-style img {
-  max-width: 100%;
-  max-height: 90%;
-  object-fit: contain;
-}
-
-/* Layout for buttons inside the paper */
-.button-row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-/* Align left and right */
 .left {
   align-self: flex-start;
 }
 .right {
   align-self: flex-end;
 }
-
-/* Page layout styles */
-.letter-page {
-  display: none;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
-.letter-page.active {
+.image-buttons {
   display: flex;
-}
-
-/* Adjusted text content */
-.letter-text {
-  font-size: 16px;
-  text-align: justify;
-  padding: 10px 20px;
-  line-height: 1.6;
-  color: #444;
+  justify-content: space-between;
+  width: 100%;
 }
