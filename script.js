@@ -69,7 +69,6 @@ function moveNoButton() {
   btn.style.top = `${randomY + 200}px`;
 }
 
-// Navigate to second page (poem)
 function goToTextPage() {
   paper.classList.remove('show');
   paper.classList.add('hide');
@@ -80,7 +79,6 @@ function goToTextPage() {
   }, 400);
 }
 
-// Back to image page
 function goToImagePage() {
   textPage.classList.remove('show');
   textPage.classList.add('hide');
