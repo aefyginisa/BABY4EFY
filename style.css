@@ -216,3 +216,54 @@ button {
 button:hover {
   background-color: #f497af;
 }
+
+/* Grid-style image layout to match uploaded image */
+.grid-style {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.grid-style img {
+  max-width: 100%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Layout for buttons inside the paper */
+.button-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Align left and right */
+.left {
+  align-self: flex-start;
+}
+.right {
+  align-self: flex-end;
+}
+
+/* Page layout styles */
+.letter-page {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.letter-page.active {
+  display: flex;
+}
+
+/* Adjusted text content */
+.letter-text {
+  font-size: 16px;
+  text-align: justify;
+  padding: 10px 20px;
+  line-height: 1.6;
+  color: #444;
+}
