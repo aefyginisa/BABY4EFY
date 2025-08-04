@@ -1,5 +1,6 @@
 const flap = document.getElementById('flap');
 const paper = document.getElementById('paper');
+const textPage = document.getElementById('textPage');
 const buttons = document.getElementById('buttons');
 const noButton = document.getElementById('noButton');
 
@@ -7,9 +8,6 @@ const flapOpenSound = document.getElementById('flapOpenSound');
 const slideOutSound = document.getElementById('slideOutSound');
 const slideInSound = document.getElementById('slideInSound');
 const flapCloseSound = document.getElementById('flapCloseSound');
-
-const page1 = document.getElementById('page1');
-const page2 = document.getElementById('page2');
 
 function showPaper() {
   flap.classList.remove('flap-close');
@@ -22,9 +20,6 @@ function showPaper() {
     paper.classList.remove('hide');
     paper.classList.add('show');
 
-    page1.classList.remove('hide');
-    page2.classList.add('hide');
-
     slideOutSound.currentTime = 0;
     slideOutSound.play();
 
@@ -36,6 +31,9 @@ function showPaper() {
 function hidePaper() {
   paper.classList.remove('show');
   paper.classList.add('hide');
+
+  textPage.classList.remove('show');
+  textPage.classList.add('hide');
 
   slideInSound.currentTime = 0;
   slideInSound.play();
@@ -56,16 +54,6 @@ function returnToEnvelope() {
   hidePaper();
 }
 
-function showNextPage() {
-  page1.classList.add('hide');
-  page2.classList.remove('hide');
-}
-
-function showPrevPage() {
-  page2.classList.add('hide');
-  page1.classList.remove('hide');
-}
-
 function moveNoButton() {
   const container = document.querySelector('.container');
   const btn = noButton;
@@ -79,4 +67,26 @@ function moveNoButton() {
   btn.style.position = 'absolute';
   btn.style.left = `${randomX}px`;
   btn.style.top = `${randomY + 200}px`;
+}
+
+// Navigate to second page (poem)
+function goToTextPage() {
+  paper.classList.remove('show');
+  paper.classList.add('hide');
+
+  setTimeout(() => {
+    textPage.classList.remove('hide');
+    textPage.classList.add('show');
+  }, 400);
+}
+
+// Back to image page
+function goToImagePage() {
+  textPage.classList.remove('show');
+  textPage.classList.add('hide');
+
+  setTimeout(() => {
+    paper.classList.remove('hide');
+    paper.classList.add('show');
+  }, 400);
 }
