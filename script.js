@@ -2,9 +2,11 @@ const flap = document.getElementById('flap');
 const paper = document.getElementById('paper');
 const buttons = document.getElementById('buttons');
 const noButton = document.getElementById('noButton');
-const imagePage = document.getElementById('imagePage');
-const textPage = document.getElementById('textPage');
 
+const page1 = document.getElementById('page1');
+const page2 = document.getElementById('page2');
+
+// Sound elements
 const flapOpenSound = document.getElementById('flapOpenSound');
 const slideOutSound = document.getElementById('slideOutSound');
 const slideInSound = document.getElementById('slideInSound');
@@ -19,51 +21,32 @@ function showPaper() {
   setTimeout(() => {
     paper.classList.remove('hide');
     paper.classList.add('show');
-    imagePage.classList.add('show');
-    textPage.classList.remove('show');
-
     slideOutSound.currentTime = 0;
     slideOutSound.play();
-
     buttons.style.opacity = '0';
     buttons.style.pointerEvents = 'none';
+    page1.classList.add('show');
   }, 800);
 }
 
 function hidePaper() {
   paper.classList.remove('show');
   paper.classList.add('hide');
-
   slideInSound.currentTime = 0;
   slideInSound.play();
 
   setTimeout(() => {
     flap.classList.remove('flap-open');
     flap.classList.add('flap-close');
-
-    flapCloseSound.currentTime = 0;
-    flapCloseSound.play();
-
     buttons.style.opacity = '1';
     buttons.style.pointerEvents = 'auto';
-
-    imagePage.classList.remove('show');
-    textPage.classList.remove('show');
-  }, 900);
+    page1.classList.remove('show');
+    page2.classList.remove('show');
+  }, 1100);
 }
 
 function returnToEnvelope() {
   hidePaper();
-}
-
-function showTextPage() {
-  imagePage.classList.remove('show');
-  textPage.classList.add('show');
-}
-
-function showImagePage() {
-  textPage.classList.remove('show');
-  imagePage.classList.add('show');
 }
 
 function moveNoButton() {
@@ -76,4 +59,14 @@ function moveNoButton() {
   btn.style.position = 'absolute';
   btn.style.left = `${randomX}px`;
   btn.style.top = `${randomY + 200}px`;
+}
+
+function nextPage() {
+  page1.classList.remove('show');
+  page2.classList.add('show');
+}
+
+function prevPage() {
+  page2.classList.remove('show');
+  page1.classList.add('show');
 }
