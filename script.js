@@ -32,6 +32,9 @@ function hidePaper() {
   paper.classList.remove('show');
   paper.classList.add('hide');
 
+  textPage.classList.remove('show');
+  textPage.classList.add('hide');
+
   slideInSound.currentTime = 0;
   slideInSound.play();
 
@@ -49,18 +52,6 @@ function hidePaper() {
 
 function returnToEnvelope() {
   hidePaper();
-  textPage.style.display = 'none';
-  paper.style.display = 'flex';
-}
-
-function showTextPage() {
-  paper.style.display = 'none';
-  textPage.style.display = 'flex';
-}
-
-function showImagePage() {
-  textPage.style.display = 'none';
-  paper.style.display = 'flex';
 }
 
 function moveNoButton() {
@@ -76,4 +67,26 @@ function moveNoButton() {
   btn.style.position = 'absolute';
   btn.style.left = `${randomX}px`;
   btn.style.top = `${randomY + 200}px`;
+}
+
+// Navigate to second page (poem)
+function goToTextPage() {
+  paper.classList.remove('show');
+  paper.classList.add('hide');
+
+  setTimeout(() => {
+    textPage.classList.remove('hide');
+    textPage.classList.add('show');
+  }, 400);
+}
+
+// Back to image page
+function goToImagePage() {
+  textPage.classList.remove('show');
+  textPage.classList.add('hide');
+
+  setTimeout(() => {
+    paper.classList.remove('hide');
+    paper.classList.add('show');
+  }, 400);
 }
